@@ -1,12 +1,24 @@
-.card{
-    margin:15px;
-    background-color:beige;
-    padding: 15px;
-    height: 110px;
-    width: 270px;
-    border: solid;
+body{
+    margin: 20px;
 }
-h2{
+.card{
+    height: 150px;
+    width: 350px;
+    border: solid;
+    border-radius: 5%;
+    background-color: beige;
+    padding-left: 10px;
+}
+.separator{
+    height: 1px;
+    width: 100vw;
+    background-color: grey;
+    margin-bottom: 30px;
+}
+.title{
+    display: flex;
+    flex-direction: row;
     padding: 0%;
-    margin: 0%;
+    align-items: center;
+    justify-content: space-evenly;
 }
