@@ -1,5 +1,8 @@
 
-import '../stylesheets/main.scss';
+import '../stylesheets/App.scss';
+import { useState } from "react";
+import "../styles/App.scss";
+import initialData from "../data/clubslist.json";
 
 function App() {
   return <div className="App">
