@@ -18,11 +18,11 @@ function App() {
   };
   //manejar nuevo abreenlaborales
   const handleWorkDays = (ev) => {
-    setWorkDays(ev.currentTarget.value);
+    setWorkDays(ev.currentTarget.checked);
   };
   //manejar nuevo abrefindes
   const handleWeekEnd = (ev) => {
-    setWeekEnd(ev.currentTarget.value);
+    setWeekEnd(ev.currentTarget.checked);
   };
   const handleClick= (ev) =>{
     ev.preventDefault(); 
@@ -33,19 +33,20 @@ function App() {
     openOnWeekend: weekEnd,
   };
   setData( [...data, newClub] );
+  console.log(data);
  }
  
   
 
   //aquí dibujo el html de los clubs
   const htmlClubList = data.map((eachClub, index) => (
-    <li class="card" key={index}>
-      <div class="title">
+    <li className="card" key={index}>
+      <div className="title">
         <h3>#{index}</h3>
         <h3>{eachClub.name}</h3>
       </div>
-      <p>Abre entre semana {(eachClub.openOnWeekdays = true ? "Sí" : "No")}</p>
-      <p>Abre entre semana {(eachClub.openOnWeekend = true ? "Sí" : "No")}</p>
+      <p>Abre entre semana {(eachClub.openOnWeekdays == true ? "Sí" : "No")}</p>
+      <p>Abre entre semana {(eachClub.openOnWeekend == true ? "Sí" : "No")}</p>
     </li>
   ));
 
@@ -53,30 +54,30 @@ function App() {
     <div className="App">
       <header>
         <h1>Mis clubs</h1>
-        <div class="separator"></div>
+        <div className="separator"></div>
       </header>
       <main>
         <ul>{htmlClubList}</ul>
 
         <section>
           <h2>Añadir un nuevo club</h2>
-          <div class="separator"></div>
+          <div className="separator"></div>
           <form>
             <input type="text" onChange={handleChangeName} />
             <div>
-              <label for="¿Está abierto entre semana?">
+              <label htmlFor="¿Está abierto entre semana?">
                 <input
                   id="estresemana"
                   type="checkbox"
                   onChange={handleWorkDays}
                   value={workDays}
-                  name="flightoption1"
+                  name="entresemana"
                 />
                 Abierto entre semana
               </label>
             </div>
             <div>
-              <label for="finde">
+              <label htmlFor="finde">
                 <input
                   id="finde"
                   type="checkbox"
